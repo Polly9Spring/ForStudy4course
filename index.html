@@ -4,10 +4,16 @@
     <title>Полинка</title>
     <meta charset="utf-8">
 </head>
+<h1>Ответ:</h1>
 <body>
     <script type="text/javascript">
-        var name = prompt("Как тебя зовут?");
-        document.write("Привет,"+name);
+        var n = prompt("Введите количество (n):");
+        var x = prompt("Введите число больше нуля:");
+        var b = 0;
+        for(var a=1; a<=n; a++){
+            b=b+((x-1)**((2*a)+1)/((2*a+1)*((x+1)**((2*a)+1))));
+        }
+        document.writeln(b);
     </script>
 </body>
 </html>
