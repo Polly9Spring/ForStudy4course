@@ -7,12 +7,13 @@
 <h1>Ответ:</h1>
 <body>
     <script type="text/javascript">
-        var n = prompt("Введите количество (n):");
-        var x = prompt("Введите число больше нуля:");
+        var n = Number(prompt("Введите количество (n):"));
+        var x = Number(prompt("Введите число больше нуля:"));
         var b = 0;
-        for(var a=1; a<=n; a++){
-            b=b+((x-1)**((2*a)+1)/((2*a+1)*((x+1)**((2*a)+1))));
+        for(var a=0; a<=n; a++){
+            b=b+(((x-1)**((2*a)+1))/((2*a+1)*((x+1)**((2*a)+1))));
         }
+        b=b*2;
         document.writeln(b);
     </script>
 </body>
