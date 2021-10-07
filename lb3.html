@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Полинка</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        //функция для создания массива пользователем
+        function formMas(){
+            var n = Number(prompt("Введите количество элементов:"));
+            var nMas = [];
+            for(var i=0; i<n; i++){
+                nMas[i]=Number(prompt("Введите число:"));
+            }
+            return nMas;
+        }
+
+        //функция для поиска индекса минимального элемента
+        function findMinInd(mas){
+            var min=0;
+            for(var i=1; i<mas.length; i++){
+                if(mas[i]<mas[min]){
+                    min=i;
+                }
+            }
+            return min;
+        }
+        
+        var massiv = formMas();
+        
+        //подсчет суммы отрицательных элементов в массиве
+        var sumOfOtric = 0;
+        for(var i=0; i<massiv.length; i++){
+            if (massiv[i]<0) {
+                sumOfOtric++;
+            }
+        }
+
+        //подсчет суммы модулей чисел после минимального элемента
+        var indexMinEl=findMinInd(massiv);
+        var sumModuls = 0;
+        for(var k = indexMinEl+1; k<massiv.length; k++){
+            sumModuls+=Math.abs(massiv[k]);
+        }
+
+        //замена всех отрицательных элементов их квадратами
+        for(var l=0; l<massiv.length; l++){
+            if (massiv[l]<0) {
+                massiv[l]=massiv[l]*massiv[l];
+            }
+        }
+
+        //упорядовачивание по возрастанию
+        massiv.sort( (a, b) =>  a - b);
+        var str = massiv.join("; ");
+        document.writeln("Количество отрицательных элементов массива равна "+sumOfOtric+"; Сумма модулей чисел после минимального элемента равна "+sumModuls+"; Элементы по возрастанию: "+str);
+    </script>
+</head>
+<body>
+</body>
+</html>
