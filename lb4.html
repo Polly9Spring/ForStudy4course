@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Полинка</title>
-	<meta charset="utf-8">
-	<script type="text/javascript">
-		var uText = prompt("Введите восклицательные и вопросительные предложения:");
-		uText = uText.split();
-		var vopr = [];
-		var voskl = [];
-		var i = 0;
-		var z = 0;
-		while(uText.length>0){
-			if(uText[i]=="!"){
-				var del = uText.splice(z, i);
-				voskl = voskl.concat(del);
-				i=0;
-			}
-			else if(uText[i]=="?"){
-				var del = uText.splice(z, i);
-				vopr = vopr.concat(del);
-				i=0;
-			}
-			else{
-				i++;
-			}
-		}
-		alert(voskl);
-	</script>
+    <title>Полинка</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        var a = prompt("Tap your text here: ");
+        var b = [];
+        for(var i = 0; i<a.length; i++){
+            b[i]=a[i];
+        }
+        
+        var voskl = [];
+        var vopr = [];
+        var i=0;
+        while(b.length>1){
+            if(b[i]=="!"){
+                var delText = b.splice(0, i+1);
+                var voskl = voskl.concat(delText);
+                i=0;
+            }
+            else if(b[i]=="?"){
+                var delText = b.splice(0, i+1);
+                var vopr = vopr.concat(delText);
+                i=0;
+            }
+            else{
+                i++;
+            }
+        }
+        var strVoskl = voskl.join("");
+        var strVopr = vopr.join("");
+        document.writeln("Все восклицательные предложения: "+strVoskl+"; Все вопросительные предложения: "+strVopr);
+    </script>
 </head>
 <body>
 
