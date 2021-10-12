@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Полинка</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		var uText = prompt("Введите восклицательные и вопросительные предложения:");
+		uText = uText.split();
+		var vopr = [];
+		var voskl = [];
+		var i = 0;
+		var z = 0;
+		while(uText.length>0){
+			if(uText[i]=="!"){
+				var del = uText.splice(z, i);
+				voskl = voskl.concat(del);
+				i=0;
+			}
+			else if(uText[i]=="?"){
+				var del = uText.splice(z, i);
+				vopr = vopr.concat(del);
+				i=0;
+			}
+			else{
+				i++;
+			}
+		}
+		alert(voskl);
+	</script>
+</head>
+<body>
+
+</body>
+</html>
